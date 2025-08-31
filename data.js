@@ -185,9 +185,9 @@ function showProducts() {
     console.log(product);
     const productCard = document.createElement("div");
     productCard.innerHTML = `
-    <div class="card bg-base-100 shadow-sm product-card">
-          <figure class="px-10 pt-10">
-            <img
+    <div class="card w-[550px] h-[750px] bg-base-130 shadow-sm product-card hover:bg-green-50">
+          <figure class=" px-10 pt-10 justify-center items-center">
+            <img 
               src="${product.img_url}"
               alt="Shoes"
               class="rounded-xl"
@@ -200,7 +200,7 @@ function showProducts() {
               <p class="text-xl">$ ${product.price}</p>
             </div>
             <div class="card-actions">
-              <button onclick="add2Cart( ${product.price})" class="btn btn-success text-white">Add to Cart</button>
+              <button onclick="add2Cart( ${product.price})" class="btn btn-success text-white hover:bg-white hover:text-green-500">Add to Cart</button>
             </div>
           </div>
         </div>
