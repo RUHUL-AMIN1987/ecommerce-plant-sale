@@ -185,25 +185,30 @@ function showProducts() {
     console.log(product);
     const productCard = document.createElement("div");
     productCard.innerHTML = `
-    <div class="card w-[550px] h-[750px] bg-base-130 shadow-sm product-card hover:bg-green-50">
-          <figure class=" px-10 pt-10 justify-center items-center">
-            <img 
-              src="${product.img_url}"
-              alt="Shoes"
-              class="rounded-xl"
-            />
-          </figure>
-          <div class="card-body items-center text-center">
-            <h2 class="card-title">${product.name}</h2>
-            <div class="flex justify-center gap-3">
-              <p class="text-lg opacity-30 line-through">$200</p>
-              <p class="text-xl">$ ${product.price}</p>
-            </div>
-            <div class="card-actions">
-              <button onclick="add2Cart( ${product.price})" class="btn btn-success text-white hover:bg-white hover:text-green-500">Add to Cart</button>
-            </div>
+          <div class="card w-full sm:w-[550px] h-auto bg-base-130 shadow-sm product-card 
+                  hover:bg-green-50 hover:shadow-lg hover:scale-105 transition duration-300">
+        <figure class="px-10 pt-10 flex justify-center items-center">
+          <img 
+            src="${product.img_url}"
+            alt="${product.name}"
+            class="rounded-xl"
+          />
+        </figure>
+        <div class="card-body items-center text-center">
+          <h2 class="card-title">${product.name}</h2>
+          <div class="flex justify-center gap-3">
+            <p class="text-lg opacity-30 line-through">$200</p>
+            <p class="text-xl">$ ${product.price}</p>
+          </div>
+          <div class="card-actions">
+            <button onclick="add2Cart(${product.price})" 
+                    class="btn btn-success text-white hover:bg-white hover:text-green-500">
+              Add to Cart
+            </button>
           </div>
         </div>
+      </div>
+
     `;
     document.getElementById("product-container").append(productCard);
   }
